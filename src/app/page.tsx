@@ -32,6 +32,7 @@ export default function HomePage() {
           </Link>
         </div>
       </div>
+      Hello (gallery in progress)
     </main>
   );
 }
