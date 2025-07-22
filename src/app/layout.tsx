@@ -16,10 +16,10 @@ function TopNav(){
  return(
   <nav className="flex w-full items-center justify-between border-b p-4 text-x1 font-semibold ">
     <Link href="/">
-      Home
+      Gallery
     </Link>
     <Link href="layer2">
-      Layer2
+      Sign In
     </Link>
   </nav>
  )
@@ -31,7 +31,7 @@ export default function RootLayout({
     <html lang="en" className={`${geist.variable}`}>
       <body className={`font-sans ${inter.variable} flex-col gap-4`}>
         <TopNav />
-      <body><div className="w-full">First Layout</div>{children}</body>
+     <div className="w-full">First Layout</div>{children}
       </body>
     </html>
   );
