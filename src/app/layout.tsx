@@ -1,7 +1,10 @@
+import { type Metadata } from "next";
+import { Geist, Inter } from "next/font/google";
+import Link from "next/link";
 import "~/styles/globals.css";
 
-import { type Metadata } from "next";
-import { Geist } from "next/font/google";
+const inter = Inter({ subsets: ["latin"], variable: '--font-inter' });
+const geist = Geist({ subsets: ["latin"], variable: '--font-geist' });
 
 export const metadata: Metadata = {
   title: "Create T3 App",
@@ -9,17 +12,27 @@ export const metadata: Metadata = {
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
-const geist = Geist({
-  subsets: ["latin"],
-  variable: "--font-geist-sans",
-});
-
+function TopNav(){
+ return(
+  <nav className="flex w-full items-center justify-between border-b p-4 text-x1 font-semibold ">
+    <Link href="/">
+      Home
+    </Link>
+    <Link href="layer2">
+      Layer2
+    </Link>
+  </nav>
+ )
+}
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${geist.variable}`}>
-      <body>{children}</body>
+      <body className={`font-sans ${inter.variable} flex-col gap-4`}>
+        <TopNav />
+      <body><div className="w-full">First Layout</div>{children}</body>
+      </body>
     </html>
   );
 }
