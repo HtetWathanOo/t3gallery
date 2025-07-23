@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { db } from "~/server/db";
+export const dynamic =" force-dynamic";
 const mockUrls= [
   "https://1vusvrntsn.ufs.sh/f/UGqYrZEKlItDBr95Yj0lwuI2VfFEnYgNZ3SsCRxi8Jev40PQ",
   "https://1vusvrntsn.ufs.sh/f/UGqYrZEKlItDcOEpow6uyCeRFlX9I7B35tYmkSHqV60pbEnD",
@@ -11,6 +12,7 @@ const mockImages = mockUrls.map((url, index) => ({
   url,
 }));
 export default async function HomePage() {
+  headers(
   const posts= await db.query.posts.findMany();
 
   console.log(posts);
@@ -25,9 +27,8 @@ export default async function HomePage() {
             <img src={image.url} alt="image" className="w-full h-auto rounded-lg shadow-md"/>
           </div>
         ))}
-        
-        </div>     
+      </div>
     </main>
-      
+
   );
-} 
+};
