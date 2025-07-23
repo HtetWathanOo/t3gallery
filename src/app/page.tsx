@@ -8,11 +8,9 @@ const mockUrls= [
 "https://1vusvrntsn.ufs.sh/f/UGqYrZEKlItDbTqqI5H2BKRaUHSlfkWjc4FqXe1xdv8E9hCz"
 ]
 const mockImages = mockUrls.map((url, index) => ({
-  id: index + 1,
-  url,
+  id: index + 1,  url,
 }));
 export default async function HomePage() {
-  headers(
   const posts= await db.query.posts.findMany();
 
   console.log(posts);
